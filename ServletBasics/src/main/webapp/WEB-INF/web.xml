@@ -9,6 +9,14 @@
   	<servlet-name>ser1</servlet-name>
   	<servlet-class>com.tarikc.AddServlet</servlet-class>
   </servlet>
-  
-  
+  <servlet>
+  	<servlet-name>square</servlet-name>
+  	<servlet-class>com.tarikc.SquareServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>square</servlet-name>
+  	<url-pattern>/square</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
