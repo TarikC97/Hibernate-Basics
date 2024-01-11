@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,10 +16,13 @@ public class AddServlet extends HttpServlet {
 		int b2= Integer.parseInt(req.getParameter("num2"));
 		int rez=b1+b2;
 		
-		//Redirect	
-		HttpSession session = req.getSession();//Sessions
-		session.setAttribute("rez", rez);
+		//Redirect
+		Cookie cookie = new Cookie("rez",rez+"");//Converting int to string
+		res.addCookie(cookie);	//Cookies
 		res.sendRedirect("square");
+//		HttpSession session = req.getSession();//Sessions
+//		session.setAttribute("rez", rez);
+		
 //		res.sendRedirect("square?b1="+b1);//Url rewritting
 //		
 //		Request Dispatcher
