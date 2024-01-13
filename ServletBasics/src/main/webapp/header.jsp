@@ -11,6 +11,7 @@
 	/* 	request.getParameter("num1");
 		pageContext.setAttribute("name", "TarikC",PageContext.SESSION_SCOPE);
 		config.getInitParameter("name"); */
+	/* 	jdbc in jsp */
 	%>
 </body>
 </html>
