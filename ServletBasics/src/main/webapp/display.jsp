@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"  %>  
+    pageEncoding="ISO-8859-1"%> 
   
 <!DOCTYPE html>
 <html>
@@ -11,6 +10,7 @@
 <body>	
 	${ime}<br>
 	
-	<c:out value="Testing library" />
+	
+	
 </body>
 </html>
