@@ -20,4 +20,14 @@
     <servlet-name>JSTL1</servlet-name>
     <url-pattern>/JSTL1</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Filter</display-name>
+    <servlet-name>Filter</servlet-name>
+    <servlet-class>com.tarikc.Filter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Filter</servlet-name>
+    <url-pattern>/Filter</url-pattern>
+  </servlet-mapping>
 </web-app>
