@@ -30,4 +30,13 @@
     <servlet-name>Filter</servlet-name>
     <url-pattern>/Filter</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>IdFilter</display-name>
+    <filter-name>IdFilter</filter-name>
+    <filter-class>com.tarikc.IdFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>IdFilter</filter-name>
+    <url-pattern>/addFilter</url-pattern>
+  </filter-mapping>
 </web-app>

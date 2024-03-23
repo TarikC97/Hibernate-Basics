@@ -19,7 +19,13 @@ public class Filter extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter out = response.getWriter();
-		out.print("Test");
+		
+		System.out.println("Servlet Filter");
+		
+		String ime = request.getParameter("name");
+		int id = Integer.parseInt(request.getParameter("id"));
+		
+		//out.print("Podaci:"+ime+" "+id);	
 	}
  
 
