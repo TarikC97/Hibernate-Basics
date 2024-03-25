@@ -8,7 +8,7 @@
 </head>
 <body>
 	<%--Unsecure page  --%>
-	<form action="Login">
+	<form action="Login" method="post">
 		Username: <input type="text" name="name"><br>
 		Password: <input type="password" name="pass"><br>
 		<input type="submit" value="Login">

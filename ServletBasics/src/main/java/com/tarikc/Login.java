@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @WebServlet("/login")
 public class Login extends HttpServlet {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");
 		String password = request.getParameter("pass");
 		

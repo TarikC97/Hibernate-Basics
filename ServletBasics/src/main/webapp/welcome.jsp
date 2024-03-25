@@ -9,6 +9,8 @@
 <body>
 	<%--Secure page  --%>
 	<%
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	   //Veryfing for one browser
 		if(session.getAttribute("username")==null){
 			response.sendRedirect("login.jsp");
 		}
