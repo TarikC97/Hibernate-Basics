@@ -8,9 +8,9 @@ import java.sql.ResultSet;
 public class LoginDao {
 	
 	String query = "select * from login where username=? and password=?";
-	String url = "jdbc:mysql://localhost:3308/servlet?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true";
+	String url = "jdbc:mysql://localhost:3308/servlet?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 	String username = "root";
-	String password = "";
+	String password = "drumpanorama97";
 	public boolean checkUser(String username, String pass ) {
 		
 		try {
