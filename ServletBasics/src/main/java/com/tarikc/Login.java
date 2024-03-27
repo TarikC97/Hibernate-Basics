@@ -9,14 +9,18 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+import com.tarikc.dao.LoginDao;
+
 @WebServlet("/login")
 public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");
 		String password = request.getParameter("pass");
 		
-		//verifying user
-		if(name.equals("tarikc")&& password.equals("drum"))
+		LoginDao dao = new LoginDao();
+		
+		//verifying user with jdbc
+		if(dao.checkUser(name, password))
 		{
 			HttpSession session = request.getSession();
 			session.setAttribute("username", name);
