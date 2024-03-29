@@ -18,6 +18,7 @@
 	%>
 	<%-- JSTL  --%>
 	<%-- JDBC Servlet --%>
+	<%-- Maven --%>
 	Welcome ${username}
 	<a href="videos.jsp">Videos here!</a>
 	
