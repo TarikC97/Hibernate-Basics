@@ -19,6 +19,7 @@
 	<%-- JSTL  --%>
 	<%-- JDBC Servlet --%>
 	<%-- MavenJSP --%>
+	<%-- Dao --%>
 	Welcome ${username}
 	<a href="videos.jsp">Videos here!</a>
 	
