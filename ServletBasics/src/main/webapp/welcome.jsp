@@ -20,7 +20,7 @@
 	<%-- JDBC Servlet --%>
 	<%-- MavenJSP --%>
 	<%-- Dao --%>
-	<%-- Dao Fetching MySql data --%>
+	<%-- Dao Fetching MySql data from DB --%>
 	Welcome ${username}
 	<a href="videos.jsp">Videos here!</a>
 	
