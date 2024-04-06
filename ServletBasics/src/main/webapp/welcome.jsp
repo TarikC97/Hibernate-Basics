@@ -20,7 +20,7 @@
 	<%-- JDBC Servlet --%>
 	<%-- MavenJSP --%>
 	<%-- Dao --%>
-	<%-- JDBC MAVEN--%>
+	<%-- JDBC Sessions--%>
 	Welcome ${username}
 	<a href="videos.jsp">Videos here!</a>
 	
