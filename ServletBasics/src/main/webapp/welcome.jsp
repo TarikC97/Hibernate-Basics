@@ -21,7 +21,7 @@
 	<%-- MavenJSP --%>
 	<%-- Dao --%>
 	<%-- JDBC Sessions--%>
-	<%--File Uploading parseRequest --%>
+	<%--File Uploading Servlet-Url --%>
 	Welcome ${username}
 	<a href="videos.jsp">Videos here!</a>
 	
