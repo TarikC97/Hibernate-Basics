@@ -22,6 +22,7 @@
 	<%-- Dao --%>
 	<%-- JDBC Sessions--%>
 	<%--File Uploading Servlet-Url --%>
+	<%-- Hibernate Intro --%>
 	Welcome ${username}
 	<a href="videos.jsp">Videos here!</a>
 	
