@@ -23,6 +23,7 @@
 	<%-- JDBC Sessions--%>
 	<%--File Uploading Servlet-Url --%>
 	<%-- Hibernate Intro --%>
+	<%-- Hibernate-Practical --%>
 	Welcome ${username}
 	<a href="videos.jsp">Videos here!</a>
 	
