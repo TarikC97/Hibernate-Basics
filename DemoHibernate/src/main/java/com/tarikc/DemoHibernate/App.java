@@ -21,5 +21,6 @@ public class App
         SessionFactory sessionfactory = config.buildSessionFactory();
         Session session = sessionfactory.openSession();
         session.persist(std);
+        
     }
 }
