@@ -18,7 +18,7 @@ public class App
         std.setSurname("Curic");
         
         
-        Configuration config = new Configuration();
+        Configuration config = new Configuration().configure().addAnnotatedClass(Student.class);
         SessionFactory sessionfactory = config.buildSessionFactory();
         Session session = sessionfactory.openSession();
         session.persist(std);

@@ -1,8 +1,13 @@
 package com.tarikc.DemoHibernate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 //Pojo(Bean)
+@Entity
 public class Student {
 
+	@Id
 	private int id;
 	private String name;
 	private String surname;
