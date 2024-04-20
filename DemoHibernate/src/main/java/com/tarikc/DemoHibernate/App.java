@@ -17,6 +17,7 @@ public class App
         std.setName("Tarik");
         std.setSurname("Curic");
         
+        
         Configuration config = new Configuration();
         SessionFactory sessionfactory = config.buildSessionFactory();
         Session session = sessionfactory.openSession();
