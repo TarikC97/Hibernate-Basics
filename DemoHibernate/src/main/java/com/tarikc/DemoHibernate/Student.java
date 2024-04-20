@@ -1,9 +1,6 @@
-/**
- * 
- */
 package com.tarikc.DemoHibernate;
 
-//POJO(BEAN)
+//Pojo(Bean)
 public class Student {
 
 	private int id;
