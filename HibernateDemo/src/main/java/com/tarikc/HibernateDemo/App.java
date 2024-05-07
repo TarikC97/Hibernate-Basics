@@ -24,6 +24,7 @@ public class App
         stud.setId(3);
         stud.setName("Tarik");
         stud.setSurname("Curic");
+        stud.setLaptop(lap);
         
         Configuration config = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class);
         SessionFactory sessfactory = config.buildSessionFactory();
