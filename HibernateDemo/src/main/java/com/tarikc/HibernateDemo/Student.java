@@ -2,6 +2,7 @@ package com.tarikc.HibernateDemo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 
 //Bean(Pojo)
@@ -11,6 +12,7 @@ public class Student {
 	private int id;
 	private String name;
 	private String surname;
+	@OneToOne
 	private Laptop laptop;
 	
 	
