@@ -24,8 +24,9 @@ public class App
         stud.setId(3);
         stud.setName("Tarik");
         stud.setSurname("Curic");
-        //Adding object to the list
+        //Adding object to the list       
         stud.getLaptop().add(lap);
+        lap.getStudent().add(stud);
         
         Configuration config = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class);
         SessionFactory sessfactory = config.buildSessionFactory();
