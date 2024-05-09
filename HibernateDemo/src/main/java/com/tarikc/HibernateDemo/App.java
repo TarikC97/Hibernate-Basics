@@ -27,6 +27,7 @@ public class App
         //Adding object to the list       
         stud.getLaptop().add(lap);
         lap.getStudent().add(stud);
+        //Fetch Eager,Lazy
         
         Configuration config = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class);
         SessionFactory sessfactory = config.buildSessionFactory();
