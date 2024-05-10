@@ -57,7 +57,7 @@ public class App
            System.out.println(al);
            tran.commit();
            session1.close();
-           
+           //HQL
            Session session2 = sessfactory.openSession();
            tran = session2.beginTransaction();
            
