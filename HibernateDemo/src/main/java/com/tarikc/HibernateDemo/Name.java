@@ -1,6 +1,6 @@
 package com.tarikc.HibernateDemo;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 //Data stored in Class Student,
 //no new table creation.
