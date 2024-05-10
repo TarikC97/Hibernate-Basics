@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 /**
  * Hello world!
@@ -48,16 +49,22 @@ public class App
            SessionFactory sessfactory = config.buildSessionFactory();
            Session session1 = sessfactory.openSession();
            Transaction tran = session1.beginTransaction();
+
+           Query que1 = session1.createQuery("from Alien where aid=1");  
+           que1.setCacheable(true);
 //           session1.persist(al);
-           al = (Alien) session1.get(Alien.class, 1);
+           al = (Alien)que1.uniqueResult();
            System.out.println(al);
            tran.commit();
            session1.close();
            
            Session session2 = sessfactory.openSession();
-           tran = session2.beginTransaction();  
+           tran = session2.beginTransaction();
            
-           al = (Alien) session2.get(Alien.class, 1);
+           Query que2 = session2.createQuery("from Alien where aid=1");
+           que2.setCacheable(true);
+           //al = (Alien)session2.get(Alien.class, 1);
+           al = (Alien)que2.uniqueResult();
            System.out.println(al);
         
            tran.commit();
