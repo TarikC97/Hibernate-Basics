@@ -1,5 +1,7 @@
 package com.tarikc.HibernateDemo;
 
+import java.util.Random;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -40,35 +42,46 @@ public class App
 //        tran.commit();
 //        
 //        System.out.println(stud);
-    		Alien al = null;
+//    		Alien al = null;
 //    		al.setAid(4);
 //    		al.setName("Fourth");
 //    		al.setColor("Blue");
     	
-    	   Configuration config = new Configuration().configure().addAnnotatedClass(Alien.class);
+    	   Configuration config = new Configuration().configure().addAnnotatedClass(Student.class);
            SessionFactory sessfactory = config.buildSessionFactory();
            Session session1 = sessfactory.openSession();
            Transaction tran = session1.beginTransaction();
-
-           Query que1 = session1.createQuery("from Alien where aid=1");  
-           que1.setCacheable(true);
-//           session1.persist(al);
-           al = (Alien)que1.uniqueResult();
-           System.out.println(al);
-           tran.commit();
-           session1.close();
-           //HQL
-           Session session2 = sessfactory.openSession();
-           tran = session2.beginTransaction();
            
-           Query que2 = session2.createQuery("from Alien where aid=1");
-           que2.setCacheable(true);
-           //al = (Alien)session2.get(Alien.class, 1);
-           al = (Alien)que2.uniqueResult();
-           System.out.println(al);
-        
+           Random rand = new Random();
+           for(int i=1;i<=50; i++) {
+        	   Student stud = new Student();
+        	   stud.setId(i);
+        	   stud.setName("Name "+i);
+        	   stud.setMarks(rand.nextInt(100));
+        	   session1.persist(stud);
+           }
+           
            tran.commit();
-           session2.close();
+
+//           Query que1 = session1.createQuery("from Alien where aid=1");  
+//           que1.setCacheable(true);
+////           session1.persist(al);
+//           al = (Alien)que1.uniqueResult();
+//           System.out.println(al);
+//           tran.commit();
+//           session1.close();
+//           //HQL
+//           Session session2 = sessfactory.openSession();
+//           tran = session2.beginTransaction();
+//           
+//           Query que2 = session2.createQuery("from Alien where aid=1");
+//           que2.setCacheable(true);
+//           //al = (Alien)session2.get(Alien.class, 1);
+//           al = (Alien)que2.uniqueResult();
+//           System.out.println(al);
+//        
+//           tran.commit();
+//           session2.close();
            
         
         

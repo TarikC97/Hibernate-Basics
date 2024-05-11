@@ -16,18 +16,24 @@ public class Student {
 	@Id
 	private int id;
 	private String name;
-	private String surname;
-	@ManyToMany(mappedBy="student")
-	private List<Laptop> laptop = new ArrayList<>();
+	private int marks;
+//	@ManyToMany(mappedBy="student")
+//	private List<Laptop> laptop = new ArrayList<>();
 	
 	
 
-	public List<Laptop> getLaptop() {
-		return laptop;
+public int getMarks() {
+		return marks;
 	}
-	public void setLaptop(List<Laptop> laptop) {
-		this.laptop = laptop;
+	public void setMarks(int marks) {
+		this.marks = marks;
 	}
+	//	public List<Laptop> getLaptop() {
+//		return laptop;
+//	}
+//	public void setLaptop(List<Laptop> laptop) {
+//		this.laptop = laptop;
+//	}
 	public int getId() {
 		return id;
 	}
@@ -46,15 +52,9 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getSurname() {
-		return surname;
-	}
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", surname=" + surname + "]";
+		return "Student [id=" + id + ", name=" + name + ", marks=" + marks + "]";
 	}
 	
 
