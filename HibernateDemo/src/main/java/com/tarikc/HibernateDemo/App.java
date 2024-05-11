@@ -1,5 +1,6 @@
 package com.tarikc.HibernateDemo;
 
+import java.util.List;
 import java.util.Random;
 
 import org.hibernate.Session;
@@ -52,15 +53,20 @@ public class App
            Session session1 = sessfactory.openSession();
            Transaction tran = session1.beginTransaction();
            
-           Random rand = new Random();
-           for(int i=1;i<=50; i++) {
-        	   Student stud = new Student();
-        	   stud.setId(i);
-        	   stud.setName("Name "+i);
-        	   stud.setMarks(rand.nextInt(100));
-        	   session1.persist(stud);
+//           Random rand = new Random();
+//           for(int i=1;i<=50; i++) {
+//        	   Student stud = new Student();
+//        	   stud.setId(i);
+//        	   stud.setName("Name "+i);
+//        	   stud.setMarks(rand.nextInt(100));
+//        	   session1.persist(stud);
+//           }
+           Query<Object[]> query1 = session1.createQuery("select id,name,marks from Student where marks>60");
+//           List<Student> students = query1.list();
+           List<Object[]> students = (List<Object[]>) query1.list();
+           for(Object[] obj:students) {
+        	   System.out.println(obj[0]+"- "+obj[1]+"- "+obj[2]);
            }
-           
            tran.commit();
 
 //           Query que1 = session1.createQuery("from Alien where aid=1");  
