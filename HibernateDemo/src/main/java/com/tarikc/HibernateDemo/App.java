@@ -1,13 +1,18 @@
 package com.tarikc.HibernateDemo;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
+import org.hibernate.query.sql.internal.SQLQueryParser;
+
+import net.sf.ehcache.search.expression.Criteria;
 
 /**
  * Hello world!
@@ -53,6 +58,16 @@ public class App
            Session session1 = sessfactory.openSession();
            Transaction tran = session1.beginTransaction();
            
+           //Native Queries in Hibernate(Sql use in hibernate)
+           NativeQuery query2 = session1.createNativeQuery("select name,marks from student where marks>90");
+//           query2.addEntity(Student.class);
+//           query2.setResultTransformer(null);
+           List students = query2.list();
+           for(Object obj: students) {
+        	   Map<String,Object> map = (Map)obj;
+        	   
+        	   System.out.println(map.get("name")+":"+map.get("marks"));
+           }
 //           Random rand = new Random();
 //           for(int i=1;i<=50; i++) {
 //        	   Student stud = new Student();
@@ -61,15 +76,15 @@ public class App
 //        	   stud.setMarks(rand.nextInt(100));
 //        	   session1.persist(stud);
 //           }
-           int num = 90;
-           Query<Object> query1 = session1.createQuery("select sum(marks) from Student where marks>:num");
-//           List<Student> students = query1.list();
-           query1.setParameter("num", num);
-           Object marks = (Object) query1.uniqueResult();
-        		   
-//           for(Object mark:marks) {
-        	   System.out.println("Sum of marks:"+marks);
-//           }
+//           int num = 90;
+//           Query<Object> query1 = session1.createQuery("select sum(marks) from Student where marks>:num");
+////           List<Student> students = query1.list();
+//           query1.setParameter("num", num);
+//           Object marks = (Object) query1.uniqueResult();
+//        		   
+////           for(Object mark:marks) {
+//        	   System.out.println("Sum of marks:"+marks);
+////           }
            tran.commit();
 
 //           Query que1 = session1.createQuery("from Alien where aid=1");  
