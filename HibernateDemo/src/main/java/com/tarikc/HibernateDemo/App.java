@@ -61,12 +61,15 @@ public class App
 //        	   stud.setMarks(rand.nextInt(100));
 //        	   session1.persist(stud);
 //           }
-           Query<Object[]> query1 = session1.createQuery("select id,name,marks from Student where marks>60");
+           int num = 90;
+           Query<Object> query1 = session1.createQuery("select sum(marks) from Student where marks>:num");
 //           List<Student> students = query1.list();
-           List<Object[]> students = (List<Object[]>) query1.list();
-           for(Object[] obj:students) {
-        	   System.out.println(obj[0]+"- "+obj[1]+"- "+obj[2]);
-           }
+           query1.setParameter("num", num);
+           Object marks = (Object) query1.uniqueResult();
+        		   
+//           for(Object mark:marks) {
+        	   System.out.println("Sum of marks:"+marks);
+//           }
            tran.commit();
 
 //           Query que1 = session1.createQuery("from Alien where aid=1");  
