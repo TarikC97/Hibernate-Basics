@@ -53,21 +53,31 @@ public class App
 //    		al.setName("Fourth");
 //    		al.setColor("Blue");
     	
-    	   Configuration config = new Configuration().configure().addAnnotatedClass(Student.class);
+    	   Configuration config = new Configuration().configure().addAnnotatedClass(Laptop.class);
            SessionFactory sessfactory = config.buildSessionFactory();
            Session session1 = sessfactory.openSession();
            Transaction tran = session1.beginTransaction();
            
+           Laptop lap = new Laptop();
+           lap.setLid(52);
+           lap.setLapname("Dell");
+           lap.setPrice(700);
+           session1.persist(lap);
+           lap.setPrice(800);
+           tran.commit();
+           session1.detach(lap);
+           lap.setPrice(650);
+           
            //Native Queries in Hibernate(Sql use in hibernate)
-           NativeQuery query2 = session1.createNativeQuery("select name,marks from student where marks>90");
-//           query2.addEntity(Student.class);
-//           query2.setResultTransformer(null);
-           List students = query2.list();
-           for(Object obj: students) {
-        	   Map<String,Object> map = (Map)obj;
-        	   
-        	   System.out.println(map.get("name")+":"+map.get("marks"));
-           }
+//           NativeQuery query2 = session1.createNativeQuery("select name,marks from student where marks>90");
+////           query2.addEntity(Student.class);
+////           query2.setResultTransformer(null);
+//           List students = query2.list();
+//           for(Object obj: students) {
+//        	   Map<String,Object> map = (Map)obj;
+//        	   
+//        	   System.out.println(map.get("name")+":"+map.get("marks"));
+//           }
 //           Random rand = new Random();
 //           for(int i=1;i<=50; i++) {
 //        	   Student stud = new Student();
@@ -85,7 +95,6 @@ public class App
 ////           for(Object mark:marks) {
 //        	   System.out.println("Sum of marks:"+marks);
 ////           }
-           tran.commit();
 
 //           Query que1 = session1.createQuery("from Alien where aid=1");  
 //           que1.setCacheable(true);

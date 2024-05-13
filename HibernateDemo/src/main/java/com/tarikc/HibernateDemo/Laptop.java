@@ -12,17 +12,13 @@ import javax.persistence.ManyToOne;
 public class Laptop {
 
 	@Id
-	public int lid;
-	public String lapname;
-	@ManyToMany
-	private List<Student> student = new ArrayList<Student>();
+	private int lid;
+	private String lapname;
+//	@ManyToMany
+//	private List<Student> student = new ArrayList<Student>();
+	private int price;
 	
-	public List<Student> getStudent() {
-		return student;
-	}
-	public void setStudent(List<Student> student) {
-		this.student = student;
-	}
+	
 	public int getLid() {
 		return lid;
 	}
@@ -35,5 +31,12 @@ public class Laptop {
 	public void setLapname(String lapname) {
 		this.lapname = lapname;
 	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
 	
 }
