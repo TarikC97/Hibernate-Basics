@@ -37,6 +37,10 @@ public class Laptop {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	@Override
+	public String toString() {
+		return "Laptop [lid=" + lid + ", lapname=" + lapname + ", price=" + price + "]";
+	}
 	
 	
 }

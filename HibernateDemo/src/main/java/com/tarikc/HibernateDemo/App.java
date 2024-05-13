@@ -58,15 +58,17 @@ public class App
            Session session1 = sessfactory.openSession();
            Transaction tran = session1.beginTransaction();
            
-           Laptop lap = new Laptop();
-           lap.setLid(52);
-           lap.setLapname("Dell");
-           lap.setPrice(700);
-           session1.persist(lap);
-           lap.setPrice(800);
+           Laptop lap = session1.load(Laptop.class,53);
+           System.out.println(lap);
+           
+//           lap.setLid(52);
+//           lap.setLapname("Dell");
+//           lap.setPrice(700);
+//           session1.persist(lap);
+//           lap.setPrice(800);
            tran.commit();
-           session1.detach(lap);
-           lap.setPrice(650);
+//           session1.detach(lap);
+//           lap.setPrice(650);
            
            //Native Queries in Hibernate(Sql use in hibernate)
 //           NativeQuery query2 = session1.createNativeQuery("select name,marks from student where marks>90");
