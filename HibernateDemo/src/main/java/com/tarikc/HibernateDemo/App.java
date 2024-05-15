@@ -70,7 +70,7 @@ public class App
 //           session1.detach(lap);
 //           lap.setPrice(650);
            
-           //JPA - Java Persistance Api
+           //JPA - Java Persistance Api-EntityManager
            
            //Native Queries in Hibernate(Sql use in hibernate)
 //           NativeQuery query2 = session1.createNativeQuery("select name,marks from student where marks>90");
